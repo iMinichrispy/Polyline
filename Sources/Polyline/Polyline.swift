@@ -397,3 +397,14 @@ private func isSeparator(_ value: Int32) -> Bool {
 }
 
 private typealias IntegerCoordinates = (latitude: Int, longitude: Int)
+
+public final class PolylineUtilities: NSObject {
+    
+    @objc public static func encode(_ locations: [CLLocation]) -> String {
+        return encodeLocations(locations)
+    }
+    
+    @objc public static func decode(_ encodedPolyline: String) -> [CLLocation]? {
+        return decodePolyline(encodedPolyline)
+    }
+}
